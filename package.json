@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon public/server.js",
+    "start": "nodemon server.js",
     "webpack": "webpack -d --watch"
   },
   "keywords": [],
@@ -24,8 +24,11 @@
     "babel-preset-react": "^6.23.0",
     "eslint": "^3.18.0",
     "eslint-plugin-react": "^6.10.3",
+    "img-loader": "^2.0.0",
     "nodemon": "^1.11.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0"
   }
 }
