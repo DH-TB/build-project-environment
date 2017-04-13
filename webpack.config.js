@@ -6,7 +6,7 @@ module.exports={
     },
     module:{
         loaders:[
-            {test:/\.css$/,loader:'file-loader!css-loader'},
+            {test:/\.css$/,loader:'css-loader'},
             {test: /\.(jpe?g|png|gif|svg)$/i,loader:'img-loader'},
             {
                 test: /\.jsx?$/,

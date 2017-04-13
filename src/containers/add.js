@@ -1,12 +1,18 @@
-import Add from '../component/add.js'
-import connect from 'react-redux';
+import Add from '../components/add';
+import {connect} from 'react-redux';
 
-const mapStateToProps= ()=>{
-
+const mapStateToProps = (state)=> {
+    return {
+        todos: state.todos
+    }
 };
 
-const mapDispanchToProps = ()=>{
-
+const mapDispatchToProps = (dispatch)=> {
+    return {
+        onAdd: (input)=> {
+            dispatch({type: 'ADD', text: input})
+        }
+    }
 };
 
-export default connect(mapStateToProps,mapDispanchToProps)(Add);
+export default connect(mapStateToProps, mapDispatchToProps)(Add);

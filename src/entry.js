@@ -1,13 +1,18 @@
-import React,{component} from 'react';
-import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
+import React from 'react';
+import {render} from 'react-dom';
+import {createStore,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import reducer from './reducers';
-import Add from './components/add';
+import reducer from './reducers/index';
 
-const store = createStore(reducer);
+import Add from './containers/add';
+import AddRequest from './middlewares/add';
 
-ReactDOM.render(
-    <Provider store={store}>
+const createStoreMiddle = applyMiddleware(AddRequest);
+
+const Store = createStore(reducer,createStoreMiddle);
+
+render(
+    <Provider store={Store}>
         <Add />
-    </Provider>,document.getElementById('app'));
+    </Provider>,document.getElementById('app')
+);
